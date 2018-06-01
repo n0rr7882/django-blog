@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hello, world!</title>
+        <link rel="stylesheet" href="/resources/css/layout.css">
+        <link rel="stylesheet" href="/resources/css/markdown.css">
+        <link rel="stylesheet" href="/resources/css/fontawesome-all.min.css">
+    </head>
+    <body>
+        <div class="app">
+            <header class="header">
+                <div class="header-content">
+                    <a class="header-title" href="/"><h1>DONGHO YU</h1></a>
+                    <h2>WEB / SERVER DEV</h2>
+                    <ul class="header-social">
+                        <a href="https://github.com/n0rr7882"><li><i class="fab fa-github"></i></li></a>
+                        <a href="https://facebook.com"><li><i class="fab fa-facebook-square"></i></li></a>
+                        <a href="mailto:n0rr7882@gmail.com"><li><i class="fas fa-envelope"></i></li></a>
+                    </ul>
+                </div>
+            </header>
+            <section class="main">
+                {% block main %} {% endblock %}
+            </section>
+        </div>
+    </body>
+</html>

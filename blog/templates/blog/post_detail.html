@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <section class="post-detail">
+        <header class="post-detail-header">
+            <div class="post-detail-header-content">
+                <h1 class="post-detail-title">{{ post.title }}</h1>
+                <h3 class="post-detail-info">
+                    {{ post.created_at|date:'Y/n/j A g:i' }} #
+                    {% for tag in post.tags %}
+                        <a href="/?tag={{tag}}">{{ tag }}</a>, 
+                    {% endfor %}
+                </h3>
+            </div>
+        </header>
+        <main class="post-content">
+            <p>{{ post.content|safe }}</p>
+        </main>
+        <hr>
+        <div class="comment">
+            <form class="comment-form" method="POST">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">SUBMIT</button>
+            </form>
+            <ul class="comment-list">
+                {% for comment in comments %}
+                    <li class="comment-element">
+                        <h3 class="comment-author">{{comment.author}}</h3>
+                        <p class="comment-info">{{comment.created_at|date:'Y/n/j A g:i'}}</p>
+                        <p class="comment-content">{{comment.content}}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}
