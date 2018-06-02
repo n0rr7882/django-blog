@@ -24,4 +24,4 @@ class Comment(models.Model):
     created_at = models.DateTimeField(default=timezone.now, blank=True)
 
     def __str__(self):
-        return '{} - {}'.format(self.author, self.content)
+        return '[{}]: {} - {}'.format(self.post, self.author, self.content)

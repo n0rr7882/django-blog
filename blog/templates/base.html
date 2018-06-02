@@ -10,9 +10,10 @@
             {% endif %}
             Dongho Yu's DEV
         </title>
-        <link rel="stylesheet" href="/resources/css/layout.css">
-        <link rel="stylesheet" href="/resources/css/markdown.css">
-        <link rel="stylesheet" href="/resources/css/fontawesome-all.min.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static "css/layout.css" %}">
+        <link rel="stylesheet" href="{% static "css/markdown.css" %}">
+        <link rel="stylesheet" href="{% static "css/fontawesome-all.min.css" %}">
     </head>
     <body>
         <div class="app">
