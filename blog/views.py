@@ -39,8 +39,6 @@ def post_list(request):
 def post_detail(request, idx):
 
     post = get_object_or_404(Post, idx=int(idx))
-    post = tagstring_to_taglist_in_post(post)
-    post.content = markdown(post.content)
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -48,6 +46,10 @@ def post_detail(request, idx):
             new_comment = form.save(commit=False)
             new_comment.post = post
             new_comment.save()
+            return redirect('post_detail', idx=idx)
+
+    post = tagstring_to_taglist_in_post(post)
+    post.content = markdown(post.content)
 
     form = CommentForm()
     comments = Comment.objects.filter(post=post.idx).order_by('-created_at')
