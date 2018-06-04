@@ -4,6 +4,8 @@ from .forms import PostForm, CommentForm
 from mistune import markdown
 import re
 
+import mysite.settings as settings
+
 
 def markdown_to_plaintext_in_post(post):
 
@@ -30,6 +32,7 @@ def post_list(request):
     posts = list(map(tagstring_to_taglist_in_post, posts))
 
     return render(request, 'blog/post_list.html', {
+        'constants': settings,
         'posts': posts,
         'page': page,
         'tag': tag
@@ -55,6 +58,7 @@ def post_detail(request, idx):
     comments = Comment.objects.filter(post=post.idx).order_by('-created_at')
 
     return render(request, 'blog/post_detail.html', {
+        'constants': settings,
         'post': post,
         'comments': comments,
         'form': form

@@ -138,3 +138,17 @@ LOGGING = {
         },
     }
 }
+
+# my global fields
+
+BLOG_TITLE = 'DONGHO YU'
+
+BLOG_SUBTITLE = 'WEB / SERVER DEV'
+
+BLOG_DESCRIPTION = "Dongho Yu's DEV"
+
+BLOG_GITHUB_URL = 'https://github.com/n0rr7882'
+
+BLOG_FACEBOOK_URL = 'https://facebook.com'
+
+BLOG_EMAIL_ADDRESS = 'n0rr7882@gmail.com'

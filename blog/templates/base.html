@@ -8,9 +8,9 @@
             {% if post %}
                 {{ post.title }} -
             {% endif %}
-            Dongho Yu's DEV
+            {{ constants.BLOG_DESCRIPTION }}
         </title>
-        <meta name="description" content="Dongho Yu의 개발 블로그입니다.">
+        <meta name="description" content="{{ constants.BLOG_SUBTITLE }}">
         {% load static %}
         <link rel="stylesheet" href="{% static "css/layout.css" %}">
         <link rel="stylesheet" href="{% static "css/markdown.css" %}">
@@ -20,12 +20,12 @@
         <div class="app">
             <header class="header">
                 <div class="header-content">
-                    <a class="header-title" href="/"><h1>DONGHO YU</h1></a>
-                    <h2>WEB / SERVER DEV</h2>
+                    <a class="header-title" href="/"><h1>{{ constants.BLOG_TITLE }}</h1></a>
+                    <h2>{{ constants.BLOG_SUBTITLE }}</h2>
                     <ul class="header-social">
-                        <a href="https://github.com/n0rr7882"><li><i class="fab fa-github"></i></li></a>
-                        <a href="https://facebook.com"><li><i class="fab fa-facebook-square"></i></li></a>
-                        <a href="mailto:n0rr7882@gmail.com"><li><i class="fas fa-envelope"></i></li></a>
+                        <a href="{{ constants.BLOG_GITHUB_URL }}"><li><i class="fab fa-github"></i></li></a>
+                        <a href="{{ constants.BLOG_FACEBOOK_URL }}"><li><i class="fab fa-facebook-square"></i></li></a>
+                        <a href="mailto:{{ constants.BLOG_EMAIL_ADDRESS }}"><li><i class="fas fa-envelope"></i></li></a>
                     </ul>
                 </div>
             </header>
